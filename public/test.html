@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>JS 測試</title>
+</head>
+<body style="display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;font-family:sans-serif;background:#f0f4ff">
+  <div style="background:white;padding:2rem;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center">
+    <h1 style="color:#4f46e5">純 HTML 測試</h1>
+    <p id="status" style="color:red;font-weight:bold">JavaScript 未執行</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem">
+      <button onclick="document.getElementById('status').style.color='green';document.getElementById('status').textContent='JavaScript 正常！正在跳轉...';setTimeout(function(){window.location.href='/login?role=admin'},1000)" style="padding:0.75rem 1.5rem;background:#3b82f6;color:white;border:none;border-radius:6px;font-size:1rem;cursor:pointer">大隊長登入</button>
+      <button onclick="document.getElementById('status').style.color='green';document.getElementById('status').textContent='JavaScript 正常！正在跳轉...';setTimeout(function(){window.location.href='/login?role=team_leader'},1000)" style="padding:0.75rem 1.5rem;background:#22c55e;color:white;border:none;border-radius:6px;font-size:1rem;cursor:pointer">小隊長登入</button>
+    </div>
+    <script>
+      document.getElementById('status').style.color = 'green';
+      document.getElementById('status').textContent = 'JavaScript 已載入！請點擊按鈕';
+    </script>
+  </div>
+</body>
+</html>
