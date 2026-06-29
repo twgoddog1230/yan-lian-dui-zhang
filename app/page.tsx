@@ -28,17 +28,4 @@ export default function Home() {
       </div>
     </div>
   );
-
-  return (
-    <div className="min-h-screen">
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <h1 className="text-xl font-bold text-indigo-600">演練隊長小幫手</h1>
-        </div>
-      </nav>
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* 主要內容 */}
-      </main>
-    </div>
-  );
 }
