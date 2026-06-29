@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import Providers from '@/app/providers';
 
 export const metadata: Metadata = {
   title: '演練隊長小幫手',
@@ -14,12 +15,14 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <body>
-        <div className="min-h-screen bg-gray-50">
-          {children}
-        </div>
-        <footer className="py-4 text-center text-sm text-gray-600 bg-white border-t">
-          <p>程式開發者：老狼</p>
-        </footer>
+        <Providers>
+          <div className="min-h-screen bg-gray-50">
+            {children}
+          </div>
+          <footer className="py-4 text-center text-sm text-gray-600 bg-white border-t">
+            <p>程式開發者：老狼</p>
+          </footer>
+        </Providers>
       </body>
     </html>
   );
