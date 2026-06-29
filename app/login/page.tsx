@@ -1,18 +1,15 @@
 'use client';
 
 import { Suspense, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useAuth } from '@/lib/authContext';
+import { useSearchParams } from 'next/navigation';
 
 function LoginContent() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
   const searchParams = useSearchParams();
   const role = searchParams.get('role') as 'admin' | 'team_leader' | null;
-  const { signIn } = useAuth();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -20,8 +17,8 @@ function LoginContent() {
     setLoading(true);
 
     try {
-      await signIn(email, password);
-      router.push(role === 'admin' ? '/admin' : '/dashboard');
+      // 臨時：直接導向儀表板
+      window.location.href = role === 'admin' ? '/admin' : '/dashboard';
     } catch (err) {
       setError(err instanceof Error ? err.message : '登入失敗');
     } finally {
